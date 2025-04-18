@@ -1,7 +1,7 @@
 # Realtime Data Streaming | End-to-End Data Engineering Project
 
 ## 📖 Table of Contents
-- [Introduction](#🚀Project-Overview)
+- [Introduction](#Project-Overview)
 - [System Architecture](#system-architecture)
 - [What You'll Learn](#what-youll-learn)
 - [Technologies](#technologies)
@@ -37,11 +37,11 @@ The project is designed with the following components:
 - Docker
 
 ## 🔑 Key Features
--🔁 **Automated Orchestration – **Scheduled data fetching and streaming via Apache Airflow
--📡 **Real-Time Ingestion – **Stream user data in real time using Apache Kafka
--⚙️ **Stream Processing – **Live data transformation with Apache Spark Structured Streaming
--🗃️ **Scalable Storage – **Persist data in Apache Cassandra, a distributed NoSQL database
--🧭 **Monitoring & Schemas – **Manage and track streams with Kafka Control Center & Schema Registry
+- 🔁 **Automated Orchestration : **Scheduled data fetching and streaming via Apache Airflow
+- 📡 **Real-Time Ingestion : **Stream user data in real time using Apache Kafka
+- ⚙️ **Stream Processing : **Live data transformation with Apache Spark Structured Streaming
+- 🗃️ **Scalable Storage : **Persist data in Apache Cassandra, a distributed NoSQL database
+- 🧭 **Monitoring & Schemas : **Manage and track streams with Kafka Control Center & Schema Registry
 
 
 
