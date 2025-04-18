@@ -24,3 +24,14 @@ The project is designed with the following components:
 - **Control Center and Schema Registry**: Helps in monitoring and schema management of our Kafka streams.
 - **Apache Spark**: For data processing with its master and worker nodes.
 - **Cassandra**: Where the processed data will be stored.
+
+## Technologies
+
+- Apache Airflow
+- Python
+- Apache Kafka
+- Apache Zookeeper
+- Apache Spark
+- Cassandra
+- PostgreSQL
+- Docker
