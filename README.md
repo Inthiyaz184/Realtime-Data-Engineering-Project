@@ -1,7 +1,7 @@
 # Realtime Data Streaming | End-to-End Data Engineering Project
 
 ## 📖 Table of Contents
-- [Introduction](#Project-Overview)
+- [Project Overview](#Project-Overview)
 - [System Architecture](#system-architecture)
 - [Tool-wise Section Flow](#what-youll-learn)
 - [Technologies](#technologies)
