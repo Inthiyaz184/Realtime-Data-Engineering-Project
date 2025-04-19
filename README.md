@@ -39,6 +39,9 @@ The project is designed with the following components:
   - Stores raw data into **PostgreSQL** (temporary staging).
 - **Why It’s Important:** Ensures all parts of the pipeline are triggered and executed in the correct sequence.
 
+![Screenshot 2025-04-19 221304](https://github.com/user-attachments/assets/32fbc994-ea5e-4862-b99c-386286f41337)
+
+
 ---
 
 ### 3. 🗃️ PostgreSQL – Temporary Staging Storage
@@ -59,6 +62,9 @@ The project is designed with the following components:
   - **Schema Registry:** Manages Avro schemas for message serialization.
   - **Kafka Control Center:** Helps monitor Kafka topics, throughput, consumer lag, etc.
 
+![kafka_console](https://github.com/user-attachments/assets/1c956c27-676e-42d4-b1e1-021e1b968171)
+
+
 ---
 
 ### 5. ⚡ Apache Spark – Real-Time Stream Processing
@@ -67,6 +73,9 @@ The project is designed with the following components:
   - Reads real-time data from Kafka topics.
   - Parses and transforms raw JSON/Avro data into a structured format.
   - Pushes cleaned/structured data to Cassandra.
+ 
+![Screenshot 2025-04-19 221845](https://github.com/user-attachments/assets/4096ce3d-88e6-4365-8d70-fc1ef7f8e310)
+
 
 ---
 
