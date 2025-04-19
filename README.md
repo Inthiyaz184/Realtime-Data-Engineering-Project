@@ -5,8 +5,6 @@
 - [System Architecture](#system-architecture)
 - [What You'll Learn](#what-youll-learn)
 - [Technologies](#technologies)
-- [Getting Started](#getting-started)
-- [Watch the Video Tutorial](#watch-the-video-tutorial)
 
 ## 🚀 Project Overview
 
@@ -20,6 +18,9 @@ The project is designed with the following components:
 
 - **Data Source**: We use `randomuser.me` API to generate random user data for our pipeline.
 - **Apache Airflow**: Responsible for orchestrating the pipeline and storing fetched data in a PostgreSQL database.
+
+![Screenshot 2025-04-19 221304](https://github.com/user-attachments/assets/c62d0926-992c-4400-a6eb-7c9bc58da103)
+
 - **Apache Kafka and Zookeeper**: Used for streaming data from PostgreSQL to the processing engine.
 - **Control Center and Schema Registry**: Helps in monitoring and schema management of our Kafka streams.
 - **Apache Spark**: For data processing with its master and worker nodes.
