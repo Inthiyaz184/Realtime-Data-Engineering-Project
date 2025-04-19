@@ -40,7 +40,7 @@ def stream_data():
     import json
     from kafka import KafkaProducer
     import time
-    # import logging
+    import logging
 
     producer = KafkaProducer(bootstrap_servers=['broker:29092'], max_block_ms=5000)
     curr_time = time.time()
@@ -54,7 +54,7 @@ def stream_data():
 
             producer.send('users_created', json.dumps(res).encode('utf-8'))
         except Exception as e:
-            # logging.error(f'An error occured: {e}')
+            logging.error(f'An error occured: {e}')
             continue
 
 with DAG('user_automation',
