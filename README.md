@@ -3,8 +3,9 @@
 ## 📖 Table of Contents
 - [Introduction](#Project-Overview)
 - [System Architecture](#system-architecture)
-- [What You'll Learn](#what-youll-learn)
+- [Tool-wise Section Flow](#what-youll-learn)
 - [Technologies](#technologies)
+- [Key Features](#key-features)
 
 ## 🚀 Project Overview
 
@@ -94,10 +95,6 @@ The project is designed with the following components:
   - Ensures reproducibility and easy environment setup.
 
 ---
-
-## 🗺️ Data Flow Summary (End-to-End)
-
-[ randomuser.me API ] ↓ (Airflow) [ PostgreSQL ] ↓ (Kafka Connect → Kafka Topics) [ Apache Kafka + Schema Registry ] ↓ (Spark Structured Streaming) [ Apache Spark ] ↓ [ Apache Cassandra ]
 
 ## ⚙️ Tools & Technologies Used
 
