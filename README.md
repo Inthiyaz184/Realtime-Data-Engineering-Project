@@ -18,13 +18,77 @@ The project is designed with the following components:
 
 - **Data Source**: We use `randomuser.me` API to generate random user data for our pipeline.
 - **Apache Airflow**: Responsible for orchestrating the pipeline and storing fetched data in a PostgreSQL database.
-
-![Screenshot 2025-04-19 221304](https://github.com/user-attachments/assets/c62d0926-992c-4400-a6eb-7c9bc58da103)
-
 - **Apache Kafka and Zookeeper**: Used for streaming data from PostgreSQL to the processing engine.
 - **Control Center and Schema Registry**: Helps in monitoring and schema management of our Kafka streams.
 - **Apache Spark**: For data processing with its master and worker nodes.
 - **Cassandra**: Where the processed data will be stored.
+
+## 🔧 Tool-wise Section Flow
+
+### 1. 🧑‍💻 Data Source – `randomuser.me` API
+- **Purpose:** Generates random user profile data (name, email, location, etc.)
+- **Role in Pipeline:** Acts as the real-time external data provider.
+- **Trigger:** Called periodically by Apache Airflow to fetch fresh user data.
+
+---
+
+### 2. 🪄 Apache Airflow – Orchestration Layer
+- **Purpose:** Automates and schedules the entire pipeline.
+- **What It Does:**
+  - Schedules DAGs to hit the randomuser.me API.
+  - Stores raw data into **PostgreSQL** (temporary staging).
+- **Why It’s Important:** Ensures all parts of the pipeline are triggered and executed in the correct sequence.
+
+---
+
+### 3. 🗃️ PostgreSQL – Temporary Staging Storage
+- **Purpose:** Temporary storage for raw data fetched by Airflow.
+- **What It Does:**
+  - Acts as a bridge between ingestion and streaming layers.
+  - Kafka connector fetches data from PostgreSQL.
+
+---
+
+### 4. 🛰️ Apache Kafka & 🧭 Apache Zookeeper – Streaming Layer
+- **Purpose:** Real-time streaming backbone.
+- **What It Does:**
+  - Kafka streams data from PostgreSQL to Spark.
+  - Zookeeper manages and coordinates Kafka brokers.
+- **Additional Components:**
+  - **Kafka Connect:** Connects PostgreSQL with Kafka.
+  - **Schema Registry:** Manages Avro schemas for message serialization.
+  - **Kafka Control Center:** Helps monitor Kafka topics, throughput, consumer lag, etc.
+
+---
+
+### 5. ⚡ Apache Spark – Real-Time Stream Processing
+- **Purpose:** Performs structured streaming & transformation.
+- **What It Does:**
+  - Reads real-time data from Kafka topics.
+  - Parses and transforms raw JSON/Avro data into a structured format.
+  - Pushes cleaned/structured data to Cassandra.
+
+---
+
+### 6. 🗄️ Apache Cassandra – Final Storage
+- **Purpose:** Distributed NoSQL database for storing processed data.
+- **What It Does:**
+  - Receives cleaned data from Spark.
+  - Provides high availability and scalability for querying processed user profiles.
+
+---
+
+### 7. 🐳 Docker – Containerization
+- **Purpose:** Simplifies deployment and scaling.
+- **What It Does:**
+  - Every component (Airflow, Kafka, Spark, Cassandra, etc.) runs in isolated containers.
+  - Ensures reproducibility and easy environment setup.
+
+---
+
+## 🗺️ Data Flow Summary (End-to-End)
+
+
 
 ## ⚙️ Tools & Technologies Used
 
