@@ -97,7 +97,7 @@ The project is designed with the following components:
 
 ## 🗺️ Data Flow Summary (End-to-End)
 
-
+[ randomuser.me API ] ↓ (Airflow) [ PostgreSQL ] ↓ (Kafka Connect → Kafka Topics) [ Apache Kafka + Schema Registry ] ↓ (Spark Structured Streaming) [ Apache Spark ] ↓ [ Apache Cassandra ]
 
 ## ⚙️ Tools & Technologies Used
 
